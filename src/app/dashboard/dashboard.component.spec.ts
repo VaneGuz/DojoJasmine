@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
+import { DataService } from '../data/data.service';
 import { DashboardComponent } from './dashboard.component';
+
+class DataServiceStub {
+  deletePost() {
+    return of(true);
+  }
+}
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,9 +15,11 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [DashboardComponent],
+      providers: [
+        { provide: DataService, useClass: DataServiceStub }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

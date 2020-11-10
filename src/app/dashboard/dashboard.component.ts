@@ -14,7 +14,7 @@ import { PostDialogComponent } from '../post-dialog/post-dialog.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(public dialog: MatDialog, private dataService: DataService) {
+  constructor(private dataService: DataService, public dialog: MatDialog) {
   }
 
   displayedColumns = ['date_posted', 'title', 'category', 'delete'];
