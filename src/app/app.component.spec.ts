@@ -1,5 +1,5 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterOutlet } from '@angular/router';
@@ -12,7 +12,7 @@ class DataServiceStub {
 
 }
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
 
