@@ -3,6 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterOutlet } from '@angular/router';
+import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DataService } from './data/data.service';
+
+class DataServiceStub {
+
+}
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -10,8 +18,9 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent]
+      imports: [MaterialModule,AppRoutingModule, DashboardComponent],
+      declarations: [AppComponent],
+      providers :  [ DataService,  DataServiceStub]
     }).compileComponents();
   }));
 
@@ -19,10 +28,8 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.debugElement.componentInstance;
   });
-
-  it('Should have a router outlet', () => {
-    const de = fixture.debugElement.query(By.directive(RouterOutlet));
-
-    expect(de).not.toBeNull();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
+
 });

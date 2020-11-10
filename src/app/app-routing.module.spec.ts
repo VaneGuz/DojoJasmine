@@ -1,7 +1,7 @@
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { routes } from './app-routing.module';
 
-fdescribe('App Routing', () => {
+describe('App Routing', () => {
   beforeAll(() => {
     console.log('beforeAll');
   });
